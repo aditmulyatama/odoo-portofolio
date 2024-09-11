@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="view_estate_rental_form" model="ir.ui.view">
+        <field name="name">estate.rental.form</field>
+        <field name="model">estate.rental</field>
+        <field name="arch" type="xml">
+            <form string="Estate Rental">
+                <sheet>
+                    <group>
+                        <field name="estate_id" />
+                        <field name="tenant_id" />
+                        <field name="rental_start_date" />
+                        <field name="rental_end_date" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_estate_rental_tree" model="ir.ui.view">
+        <field name="name">estate.rental.tree</field>
+        <field name="model">estate.rental</field>
+        <field name="arch" type="xml">
+            <tree string="Estate Rentals">
+                <field name="estate_id" />
+                <field name="tenant_id" />
+                <field name="rental_start_date" />
+                <field name="rental_end_date" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Calendar View -->
+    <record id="view_estate_rental_calendar" model="ir.ui.view">
+        <field name="name">estate.rental.calendar</field>
+        <field name="model">estate.rental</field>
+        <field name="arch" type="xml">
+            <calendar string="Estate Rental Calendar" date_start="rental_start_date"
+                date_stop="rental_end_date" color="estate_id">
+                <field name="estate_id" />
+                <field name="tenant_id" />
+            </calendar>
+        </field>
+    </record>
+</odoo>

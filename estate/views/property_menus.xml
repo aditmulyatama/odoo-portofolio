@@ -1,0 +1,43 @@
+<odoo>
+
+    <!-- Estate Menu -->
+    <menuitem id="estate_menu" name="Real Estate" />
+
+    <!-- Advertisements Submenu -->
+    <menuitem id="advertisements_menu" name="Advertisements" parent="estate_menu" />
+    <record id="estate_property_action" model="ir.actions.act_window">
+        <field name="name">Properties</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_available': 1}</field>
+    </record>
+    <menuitem id="properties_menu" name="Properties" action="estate_property_action"
+        parent="advertisements_menu" />
+
+    <!-- Settings Submenu -->
+    <menuitem id="settings_menu" name="Settings" parent="estate_menu" />
+    <record id="estate_property_type_action" model="ir.actions.act_window">
+        <field name="name">Estate Type</field>
+        <field name="res_model">estate.property.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="property_types_menu" name="Property Types" action="estate_property_type_action"
+        parent="settings_menu" />
+
+    <record id="estate_property_tag_action" model="ir.actions.act_window">
+        <field name="name">Estate Tag</field>
+        <field name="res_model">estate.property.tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="property_tags_menu" name="Property Tags" action="estate_property_tag_action"
+        parent="settings_menu" />
+
+    <!-- Offers Action -->
+    <record id="action_estate_property_offer" model="ir.actions.act_window">
+        <field name="name">Offers</field>
+        <field name="res_model">estate.property.offer</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('property_type_id', '=', active_id)]</field>
+    </record>
+
+</odoo>

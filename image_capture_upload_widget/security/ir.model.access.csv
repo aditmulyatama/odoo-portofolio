@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_image_capture,access.image.capture,model_image_capture,base.group_user,1,1,1,1
+image_capture_upload_widget.access_quality_check_picture,access_quality_check_picture,image_capture_upload_widget.model_quality_check_picture,base.group_user,1,1,1,1

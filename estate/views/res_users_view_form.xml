@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- res.users inherit form view -->
+    <record id="view_users_form_inherited" model="ir.ui.view">
+        <field name="name">res.users.inherit.view.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form" />
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <xpath expr="//notebook" position="inside">
+                <page name="Properties" string="Properties">
+                    <field name="property_ids" widget="one2many_list">
+                        <tree>
+                            <field name="name" />
+                            <field name="state" />
+                            <field name="expected_price" />
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <!-- THIS WILL HAVE SAME RESULT -->
+            <!-- <notebook colspan="4" position="inside">
+                <page name="name" string="string">
+                    <page name="Properties" string="Properties">
+                        <field name="property_ids">
+                            <tree>
+                                <field name="name" />
+                                <field name="state" />
+                                <field name="expected_price" />
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </notebook> -->
+        </field>
+    </record>
+</odoo>

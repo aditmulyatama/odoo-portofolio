@@ -1,0 +1,30 @@
+<odoo>
+    <!-- Estate type action -->
+    <record id="estate_property_type_action" model="ir.actions.act_window">
+        <field name="name">Estate Type</field>
+        <field name="res_model">estate.property.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="settings_menu" name="Settings" parent="estate.estate_menu" />
+    <menuitem id="property_types_menu" name="Property Types" action="estate_property_type_action"
+        parent="settings_menu" />
+
+    <!-- Estate tags action -->
+    <record id="estate_property_tag_action" model="ir.actions.act_window">
+        <field name="name">Estate Tag</field>
+        <field name="res_model">estate.property.tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="property_tags_menu" name="Property Tags" action="estate_property_tag_action"
+        parent="settings_menu" />
+
+    <!-- Estate property offer action -->
+    <record id="action_estate_property_offer" model="ir.actions.act_window">
+        <field name="name">Offers</field>
+        <field name="res_model">estate.property.offer</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('property_type_id', '=', active_id)]</field>
+    </record>
+</odoo>

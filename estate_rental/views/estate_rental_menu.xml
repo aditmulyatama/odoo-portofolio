@@ -1,0 +1,14 @@
+<odoo>
+
+    <!-- Estate Menu -->
+    <menuitem id="rental_menu" name="Estate Rental" />
+
+    <!-- Advertisements Submenu -->
+    <record id="estate_rental_action" model="ir.actions.act_window">
+        <field name="name">Rental</field>
+        <field name="res_model">estate.rental</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+    <menuitem id="rentals_menu" name="Rental" action="estate_rental_action"
+        parent="rental_menu" />
+</odoo>

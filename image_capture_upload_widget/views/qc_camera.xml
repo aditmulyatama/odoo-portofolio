@@ -1,0 +1,19 @@
+<odoo>
+    <record id="qc_camera" model="ir.ui.view">
+        <field name="name">qc_camera</field>
+        <field name="model">quality.check.wizard</field>
+        <field name="inherit_id" ref="quality_control.view_quality_check_wizard"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='picture']" position="replace">
+                    <field name="picture" widget="image" invisible="1" />
+                    <field name="multi_pictures" readonly="quality_state != 'none'">
+                        <tree editable="bottom">
+                            <field name="picture" widget="capture_image" />
+                        </tree>
+                    </field>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>

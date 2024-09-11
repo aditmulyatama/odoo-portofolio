@@ -1,0 +1,14 @@
+<odoo>
+    <!-- estate.rental inherit form view -->
+    <record id="estate_rental" model="ir.ui.view">
+        <field name="name">estate.rental.inherit.view.form</field>
+        <field name="model">estate.property</field>
+        <field name="inherit_id" ref="estate.estate_property_view_form" />
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <xpath expr="//field[@name='buyer']" position="after">
+                <field name="rental_id" options="{'create':false}" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

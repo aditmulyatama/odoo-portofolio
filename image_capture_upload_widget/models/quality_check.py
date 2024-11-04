@@ -18,6 +18,8 @@ class QualityCheckWizard(models.TransientModel):
     _inherit = 'quality.check.wizard'
 
     multi_pictures = fields.One2many(related='current_check_id.multi_pictures', readonly=False)
+    current_check_id = fields.Many2one('quality.check', required=True)
+    
 
     def do_pass(self):
         if self.test_type == 'picture' and not self.multi_pictures:
